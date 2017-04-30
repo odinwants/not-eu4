@@ -23,8 +23,8 @@ class Army(object):
         self.cav = self.troops[1]
         self.art = self.troops[2]
     
-    def build(self, typeOfUnit, amount, price): 
-        return typeOfUnit, amount, price
+    def build(self, typeOfUnit, amount): 
+        return typeOfUnit, amount
 
 def main():
     #creates the object
@@ -33,21 +33,13 @@ def main():
     infantry = x.inf
     cavalry = x.cav
     artillery = x.art
-    #user input,
+    #user input, decision making
     typeOfUnit = input("Type of troops (infantry, cavalry, artillery): ")
     amount = int(input("Amount of troops: "))
-    #decision making
-    if(typeOfUnit == infantry):
-        print(x.build(typeOfUnit, amount, 0.3 * amount)) #last one is price
 
-    elif(typeOfUnit == cavalry):
-        print(x.build(typeOfUnit, amount, 0.6 * amount)) #last one is price
+    print(x.build(typeOfUnit, amount))
 
-    elif(typeOfUnit == artillery):
-        print(x.build(typeOfUnit, amount, 1.2 * amount)) #last one is price
-    
     return 0
     
 if __name__ == '__main__':
 	main()
-  
